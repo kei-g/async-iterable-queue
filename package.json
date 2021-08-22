@@ -1,0 +1,56 @@
+{
+  "author": {
+    "email": "km.8k6ce+github@gmail.com",
+    "name": "kei-g"
+  },
+  "bugs": {
+    "url": "https://github.com/kei-g/async-iterable-queue/issues"
+  },
+  "categories": [
+    "Other"
+  ],
+  "description": "Async Iterable Queue",
+  "devDependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.7.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "mocha": "^9.1.0",
+    "nyc": "^15.1.0",
+    "terser": "^5.7.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5",
+    "uuid": "^8.3.2"
+  },
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/kei-g/async-iterable-queue",
+  "name": "async-iterable-queue",
+  "nyc": {
+    "branches": 93,
+    "functions": 100,
+    "lines": 100,
+    "statements": 100
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kei-g/async-iterable-queue.git"
+  },
+  "scripts": {
+    "build": "npm run lint && tsc && ([ -d lib ] || mkdir lib) && cp build/async-iterable-queue.d.ts lib/ && terser build/async-iterable-queue.js -c -m -o lib/async-iterable-queue.js --toplevel",
+    "clean": "rm -fr .nyc_output/ build/ coverage/ lib/",
+    "cover": "nyc --check-coverage -r html -r text _mocha",
+    "lint": "eslint *.ts",
+    "prepublishOnly": "npm run build",
+    "test": "npm run lint && npm run cover"
+  },
+  "types": "lib/async-iterable-queue.d.ts",
+  "version": "1.0.0"
+}

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "charset": "utf8",
+    "declaration": true,
+    "downlevelIteration": true,
+    "emitBOM": false,
+    "emitDeclarationOnly": false,
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": false,
+    "lib": [
+      "ES2015",
+    ],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "newLine": "lf",
+    "outDir": "build",
+    "pretty": false,
+    "removeComments": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "target": "ES6",
+  },
+  "files": [
+    "async-iterable-queue.ts",
+  ],
+}

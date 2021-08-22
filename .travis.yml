@@ -1,0 +1,10 @@
+cache: npm
+language: node_js
+node_js:
+  - 14
+  - 15
+  - 16
+notifications:
+  email: false
+script:
+  - npm test
