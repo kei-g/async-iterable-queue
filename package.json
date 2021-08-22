@@ -38,6 +38,7 @@
     "queue"
   ],
   "license": "BSD-3-Clause",
+  "main": "lib/async-iterable-queue.js",
   "name": "async-iterable-queue",
   "nyc": {
     "branches": 93,
