@@ -93,14 +93,16 @@ export class AsyncIterableQueue<T> implements AsyncIterable<T> {
    * @param cb 終端が読み取られた後に呼ばれるコールバック関数
    */
   end(cb?: NoParameterCallback): Promise<void> {
-    const state = this.#state
-    if (state)
-      throw new Error(state)
-    this.#state = 'ending'
-    return new Promise((resolve: Resolver<void>) => (
-      this.#emitter.emit('enq', new Terminator(cb)),
-      resolve()
-    ))
+    return new Promise(
+      (resolve: Resolver<void>, reject: SingleParameterAction<unknown>) => {
+        const state = this.#state
+        if (state)
+          return reject(new Error(state))
+        this.#state = 'ending'
+        this.#emitter.emit('enq', new Terminator(cb))
+        return resolve()
+      }
+    )
   }
 
   /**
@@ -108,13 +110,15 @@ export class AsyncIterableQueue<T> implements AsyncIterable<T> {
    * @param value 要素の値
    */
   push(value: T): Promise<void> {
-    const state = this.#state
-    if (state)
-      throw new Error(state)
-    return new Promise((resolve: Resolver<void>) => (
-      this.#emitter.emit('enq', value),
-      resolve()
-    ))
+    return new Promise(
+      (resolve: Resolver<void>, reject: SingleParameterAction<unknown>) => {
+        const state = this.#state
+        if (state)
+          return reject(new Error(state))
+        this.#emitter.emit('enq', value)
+        return resolve()
+      }
+    )
   }
 
   /**
@@ -185,15 +189,12 @@ class Terminator {
         try {
           const result = this.cb()
           if (result instanceof Promise)
-            result.catch(reject).then(resolve)
-          else
-            resolve()
+            return result.catch(reject).then(resolve)
         }
         catch (err: unknown) {
-          reject(err)
+          return reject(err)
         }
-      else
-        resolve()
+      return resolve()
     })
   }
 }
