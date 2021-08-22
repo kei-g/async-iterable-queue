@@ -37,6 +37,7 @@
     "iterable",
     "queue"
   ],
+  "license": "BSD-3-Clause",
   "name": "async-iterable-queue",
   "nyc": {
     "branches": 93,
