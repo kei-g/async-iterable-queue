@@ -29,6 +29,15 @@
     "lib"
   ],
   "homepage": "https://github.com/kei-g/async-iterable-queue",
+  "keywords": [
+    "async",
+    "asynchronous",
+    "asynciterable",
+    "asynciterator",
+    "iterable",
+    "queue"
+  ],
+  "license": "BSD-3-Clause",
   "name": "async-iterable-queue",
   "nyc": {
     "branches": 93,
