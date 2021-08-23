@@ -3,6 +3,7 @@
     "alwaysStrict": true,
     "charset": "utf8",
     "declaration": true,
+    "declarationDir": "lib",
     "downlevelIteration": true,
     "emitBOM": false,
     "emitDeclarationOnly": false,
