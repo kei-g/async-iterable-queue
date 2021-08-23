@@ -21,8 +21,14 @@
     "strict": true,
     "strictNullChecks": false,
     "target": "ES6",
+    "typeRoots": [
+      "node_modules/@types",
+    ],
   },
   "files": [
+    "async-iterable-queue.ts",
+  ],
+  "include": [
     "async-iterable-queue.ts",
   ],
 }
