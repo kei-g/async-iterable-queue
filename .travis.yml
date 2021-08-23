@@ -1,7 +1,9 @@
-cache: npm
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
+cache:
+  directories:
+    - ~/.npm
 language: node_js
 node_js:
   - 14
