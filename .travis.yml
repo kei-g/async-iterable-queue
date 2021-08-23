@@ -1,4 +1,7 @@
 cache: npm
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
 language: node_js
 node_js:
   - 14
