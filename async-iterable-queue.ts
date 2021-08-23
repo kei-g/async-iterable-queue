@@ -68,12 +68,13 @@ export class AsyncIterableQueue<T> implements AsyncIterable<T> {
   /**
    * この待ち行列の現在の状態
    */
-  readonly #state = new Uint8Array([AIQState.undefined])
+  readonly #state = new Uint8Array(new SharedArrayBuffer(1))
 
   /**
    * コンストラクタ
    */
   constructor() {
+    this.#state[0] = AIQState.undefined
     const resolveAsync = createAsyncResolver({
       finish: () => Atomics.exchange(this.#state, 0, AIQState.finished),
       resolvers: this.#resolvers,
