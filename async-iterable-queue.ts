@@ -1,4 +1,5 @@
 import { EventEmitter } from 'stream'
+import { assert } from 'console'
 
 /**
  * 非同期反復可能な先入れ先出し型の待ち行列への非同期反復子
@@ -39,7 +40,11 @@ class AIQAsyncIterator<T> implements AsyncIterator<T> {
 /**
  * 非同期反復可能な先入れ先出し型の待ち行列の状態を表す型
  */
-type AIQState = 'ending' | 'finished'
+enum AIQState {
+  ending = 1,
+  finished = 2,
+  undefined = 0,
+}
 
 /**
  * 非同期反復可能な先入れ先出し型の待ち行列
@@ -63,18 +68,14 @@ export class AsyncIterableQueue<T> implements AsyncIterable<T> {
   /**
    * この待ち行列の現在の状態
    */
-  #state?: AIQState
+  readonly #state = new Uint8Array([AIQState.undefined])
 
   /**
    * コンストラクタ
    */
   constructor() {
     const resolveAsync = createAsyncResolver({
-      finish: () => {
-        const state = this.#state
-        this.#state = 'finished'
-        return state
-      },
+      finish: () => Atomics.exchange(this.#state, 0, AIQState.finished),
       resolvers: this.#resolvers,
     })
     this.#emitter.on('deq', async () => {
@@ -93,14 +94,20 @@ export class AsyncIterableQueue<T> implements AsyncIterable<T> {
    * @param cb 終端が読み取られた後に呼ばれるコールバック関数
    */
   end(cb?: NoParameterCallback): Promise<void> {
-    const state = this.#state
-    if (state)
-      throw new Error(state)
-    this.#state = 'ending'
-    return new Promise((resolve: Resolver<void>) => (
-      this.#emitter.emit('enq', new Terminator(cb)),
-      resolve()
-    ))
+    return new Promise(
+      (resolve: Resolver<void>, reject: SingleParameterAction<unknown>) => {
+        const state = Atomics.compareExchange(
+          this.#state,
+          0,
+          AIQState.undefined,
+          AIQState.ending,
+        )
+        if (state !== AIQState.undefined)
+          return reject(new Error(AIQState[state]))
+        this.#emitter.emit('enq', new Terminator(cb))
+        return resolve()
+      }
+    )
   }
 
   /**
@@ -108,13 +115,15 @@ export class AsyncIterableQueue<T> implements AsyncIterable<T> {
    * @param value 要素の値
    */
   push(value: T): Promise<void> {
-    const state = this.#state
-    if (state)
-      throw new Error(state)
-    return new Promise((resolve: Resolver<void>) => (
-      this.#emitter.emit('enq', value),
-      resolve()
-    ))
+    return new Promise(
+      (resolve: Resolver<void>, reject: SingleParameterAction<unknown>) => {
+        const state = Atomics.load(this.#state, 0)
+        if (state !== AIQState.undefined)
+          return reject(new Error(AIQState[state]))
+        this.#emitter.emit('enq', value)
+        return resolve()
+      }
+    )
   }
 
   /**
@@ -185,15 +194,12 @@ class Terminator {
         try {
           const result = this.cb()
           if (result instanceof Promise)
-            result.catch(reject).then(resolve)
-          else
-            resolve()
+            return result.catch(reject).then(resolve)
         }
         catch (err: unknown) {
-          reject(err)
+          return reject(err)
         }
-      else
-        resolve()
+      return resolve()
     })
   }
 }
@@ -219,8 +225,8 @@ const createAsyncResolver = <T>(param: AsyncResolverCreateParameter<T>) => {
     if (value instanceof Terminator) {
       const state = param.finish()
       await resolveAsync({ done: true } as IteratorResult<T>)
-      if (state === 'ending')
-        await value.call()
+      assert(state === AIQState.ending)
+      await value.call()
     }
     else
       await resolveAsync({
