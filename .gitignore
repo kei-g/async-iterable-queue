@@ -2,6 +2,7 @@
 **/.vscode/
 **/build/
 **/coverage/
-**/lib/
+**/lib/*.js
+**/lib/*.ts
 **/node_modules/
 **/package-lock.json

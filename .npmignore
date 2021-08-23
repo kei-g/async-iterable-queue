@@ -1,0 +1,9 @@
+**/*.ts
+**/.editorconfig
+**/.eslintrc.json
+**/.mocharc.json
+**/.travis.yml
+**/CODE_OF_CONDUCT.md
+**/build/
+**/test/
+**/tsconfig.json
