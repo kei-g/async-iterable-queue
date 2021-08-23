@@ -1,7 +1,6 @@
 import { AsyncIterableQueue } from '../async-iterable-queue'
 import { describe, it } from 'mocha'
 import { expect } from 'chai'
-import { throws } from 'assert'
 
 const source = [
   Math.LN2,
@@ -23,7 +22,13 @@ describe('failure mission', async () => {
       for (const value of source)
         await q.push(value)
       await q.end()
-      throws(() => q.end())
+      let error: Error
+      await q.end()
+        .catch((reason: unknown) => {
+          if (reason instanceof Error)
+            error = reason
+        })
+        .finally(() => expect(error).instanceOf(Error))
     }
     await Promise.all([popAsync(q), pushAsync()])
   })
@@ -33,7 +38,13 @@ describe('failure mission', async () => {
       for (const value of source)
         await q.push(value)
       await q.end()
-      throws(() => q.push(Math.SQRT2))
+      let error: Error
+      await q.push(Math.SQRT2)
+        .catch((reason?: unknown) => {
+          if (reason instanceof Error)
+            error = reason
+        })
+        .finally(() => expect(error).instanceOf(Error))
     }
     await Promise.all([popAsync(q), pushAsync()])
   })
@@ -44,7 +55,7 @@ describe('failure mission', async () => {
         await q.push(value)
       await q.end(() => {
         throw new Error()
-      })
+      }).catch((reason?: unknown) => expect(reason).instanceOf(Error))
     }
     await Promise.all([popAsync(q), pushAsync()])
   })
