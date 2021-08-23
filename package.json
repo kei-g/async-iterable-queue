@@ -93,5 +93,5 @@
     "test": "npm run lint && npm run cover"
   },
   "types": "lib/async-iterable-queue.d.ts",
-  "version": "1.0.5"
+  "version": "1.0.6"
 }
