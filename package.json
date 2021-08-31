@@ -71,12 +71,6 @@
   "license": "BSD-3-Clause",
   "main": "index.js",
   "name": "async-iterable-queue",
-  "nyc": {
-    "branches": 100,
-    "functions": 100,
-    "lines": 100,
-    "statements": 100
-  },
   "publishConfig": {
     "access": "public"
   },

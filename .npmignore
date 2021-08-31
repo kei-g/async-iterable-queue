@@ -1,6 +1,7 @@
 **/.editorconfig
 **/.eslintrc.json
 **/.mocharc.json
+**/.nycrc.json
 **/.travis.yml
 **/CODE_OF_CONDUCT.md
 **/build/

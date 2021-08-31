@@ -1,0 +1,28 @@
+{
+  "all": true,
+  "branches": 100,
+  "check-coverage": true,
+  "exclude": [
+    "**/*.spec.ts",
+    "**/index.ts"
+  ],
+  "extension": [
+    ".ts"
+  ],
+  "functions": 100,
+  "include": [
+    "**/*.ts"
+  ],
+  "lines": 100,
+  "reporter": [
+    "html",
+    "text"
+  ],
+  "statements": 100,
+  "watermarks": {
+    "branches": [80, 95],
+    "functions": [80, 95],
+    "lines": [80, 95],
+    "statements": [80, 95]
+  }
+}
