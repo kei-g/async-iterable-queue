@@ -1,4 +1,4 @@
-import { AsyncIterableQueue } from '../async-iterable-queue'
+import { AsyncIterableQueue } from '../src'
 import { describe, it } from 'mocha'
 import { expect } from 'chai'
 

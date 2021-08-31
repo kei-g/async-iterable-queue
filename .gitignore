@@ -1,8 +1,9 @@
+**/*.d.ts
+**/*.js
 **/.nyc_output/
 **/.vscode/
 **/build/
 **/coverage/
-**/lib/*.js
-**/lib/*.ts
+**/lib/
 **/node_modules/
 **/package-lock.json
