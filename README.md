@@ -1,4 +1,4 @@
-# async-iterable-queue [![License][license-image]][license-url] [![Dependency][depencency-image]][dependency-url] [![Travis][travis-image]][travis-url] [![npm][npm-image]][npm-url]
+# async-iterable-queue [![License][license-image]][license-url] [![Dependency][depencency-image]][dependency-url] [![GitHub][github-test-image]][github-url] [![Travis][travis-image]][travis-url] [![npm][npm-image]][npm-url]
 
 [![coverage][nyc-cov-image]][github-url] [![maintenance][maintenance-image]][npmsio-url] [![quality][quality-image]][npmsio-url]
 
@@ -6,6 +6,7 @@ Async Iterable Queue
 
 [depencency-image]:https://img.shields.io/librariesio/release/npm/async-iterable-queue?logo=nodedotjs
 [dependency-url]:https://npmjs.com/package/async-iterable-queue?activeTab=dependencies
+[github-test-image]:https://img.shields.io/github/workflow/status/kei-g/async-iterable-queue/test/main?label=build%20%26%20test&logo=github
 [github-url]:https://github.com/kei-g/async-iterable-queue
 [license-image]:https://img.shields.io/github/license/kei-g/async-iterable-queue
 [license-url]:https://opensource.org/licenses/BSD-3-Clause

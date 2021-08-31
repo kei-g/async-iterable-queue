@@ -1,5 +1,6 @@
 **/.editorconfig
 **/.eslintrc.json
+**/.github/
 **/.mocharc.json
 **/.nycrc.json
 **/.travis.yml
