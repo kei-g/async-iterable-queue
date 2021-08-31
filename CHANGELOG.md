@@ -1,5 +1,26 @@
 # ChangeLogs
 
+## Version 1.0.6
+
+- :memo: Badge for Travis CI is corrected
+- :hammer: Build script is optimized
+- :children_crossing: Example code is added
+- :green_heart: Github Action for CI
+- :arrow_up: Packages for development are updated
+  - `@types/node` is upgraded from 16.7.1 to 16.7.8
+  - `@typescript-eslint/eslint-plugin` is upgraded from 4.29.2 to 4.30.0
+  - `@typescript-eslint/parser` is upgraded from 4.29.2 to 4.30.0
+  - `mocha` is upgraded from 9.1.0 to 9.1.1
+  - `terser` is upgraded from 5.7.1 to 5.7.2
+  - `typescript` is upgraded from 4.3.5 to 4.4.2
+- :memo: README is updated
+  - Badges for both CI and coverage are added
+  - Installation section is added
+  - Usage section is added
+- :green_heart: Travis CI
+  - Node.js v15.x is excepted from test target
+  - Only 'main' branch is made to be tested
+
 ## Version 1.0.5
 
 - :see_no_evil: .npmignore is added

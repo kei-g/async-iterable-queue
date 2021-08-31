@@ -3,7 +3,7 @@
     "alwaysStrict": true,
     "charset": "utf8",
     "declaration": true,
-    "declarationDir": "lib",
+    "declarationDir": ".",
     "downlevelIteration": true,
     "emitBOM": false,
     "emitDeclarationOnly": false,
@@ -26,9 +26,7 @@
     ],
   },
   "files": [
-    "async-iterable-queue.ts",
-  ],
-  "include": [
-    "async-iterable-queue.ts",
-  ],
+    "src/index.ts",
+    "src/lib/async-iterable-queue.ts",
+  ]
 }
