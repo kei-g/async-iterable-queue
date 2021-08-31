@@ -1,6 +1,6 @@
 branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+  only:
+    - main
 cache:
   directories:
     - ~/.npm
