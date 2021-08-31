@@ -6,6 +6,7 @@
 **/.travis.yml
 **/CODE_OF_CONDUCT.md
 **/build/
+**/example.ts
 **/src/
 **/test/
 **/tsconfig.json
