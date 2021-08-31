@@ -1,9 +1,12 @@
-**/*.ts
 **/.editorconfig
 **/.eslintrc.json
+**/.github/
 **/.mocharc.json
+**/.nycrc.json
 **/.travis.yml
 **/CODE_OF_CONDUCT.md
 **/build/
+**/example.ts
+**/src/
 **/test/
 **/tsconfig.json
