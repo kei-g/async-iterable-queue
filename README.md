@@ -72,5 +72,5 @@ example()
 [npmsio-url]:https://npms.io/search?q=async-iterable-queue
 [nyc-cov-image]:https://img.shields.io/nycrc/kei-g/async-iterable-queue?config=.nycrc.json&label=coverage
 [quality-image]:https://img.shields.io/npms-io/quality-score/async-iterable-queue?logo=npm
-[travis-image]:https://img.shields.io/travis/kei-g/async-iterable-queue/main.svg?logo=travis
-[travis-url]:https://travis-ci.org/kei-g/async-iterable-queue
+[travis-image]:https://img.shields.io/travis/com/kei-g/async-iterable-queue/main?label=build%20%26%20test&logo=travis
+[travis-url]:https://app.travis-ci.com/kei-g/async-iterable-queue
