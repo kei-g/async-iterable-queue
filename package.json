@@ -3,38 +3,6 @@
     "email": "km.8k6ce+github@gmail.com",
     "name": "kei-g"
   },
-  "badges": [
-    {
-      "description": "license",
-      "href": "https://opensource.org/licenses/BSD-3-Clause",
-      "url": "https://img.shields.io/github/license/kei-g/async-iterable-queue"
-    },
-    {
-      "description": "dependency",
-      "href": "https://npmjs.com/package/async-iterable-queue?activeTab=dependencies",
-      "url": "https://img.shields.io/librariesio/release/npm/async-iterable-queue?logo=nodedotjs"
-    },
-    {
-      "description": "Travis CI",
-      "href": "https://www.travis-ci.com/github/kei-g/async-iterable-queue",
-      "url": "https://img.shields.io/travis/com/kei-g/async-iterable-queue?logo=travis"
-    },
-    {
-      "description": "version",
-      "href": "https://npmjs.com/package/async-iterable-queue",
-      "url": "https://img.shields.io/npm/v/async-iterable-queue?logo=npm"
-    },
-    {
-      "description": "maintenance",
-      "href": "https://npms.io/search?q=async-iterable-queue",
-      "url": "https://img.shields.io/npms-io/maintenance-score/async-iterable-queue?logo=npm"
-    },
-    {
-      "description": "quality",
-      "href": "https://npms.io/search?q=async-iterable-queue",
-      "url": "https://img.shields.io/npms-io/quality-score/async-iterable-queue?logo=npm"
-    }
-  ],
   "bugs": {
     "url": "https://github.com/kei-g/async-iterable-queue/issues"
   },
