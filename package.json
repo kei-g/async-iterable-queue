@@ -80,7 +80,7 @@
   },
   "scripts": {
     "build": "npm-run-all -p clean lint -s build:tsc -p build:terse:*",
-    "build:terse:async-iterable-queue": "terser build/lib/async-iterable-queue.js -c -m -o lib/async-iteable-queue.js --toplevel",
+    "build:terse:async-iterable-queue": "terser build/lib/async-iterable-queue.js -c -m -o lib/async-iterable-queue.js --toplevel",
     "build:terse:index": "terser build/index.js -c -m -o index.js --toplevel",
     "build:tsc": "tsc",
     "clean": "rimraf .nyc_output/ build/ coverage/ index.d.ts index.js lib/",
