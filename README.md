@@ -1,6 +1,6 @@
-# async-iterable-queue [![License][license-image]][license-url] [![Dependency][depencency-image]][dependency-url] [![GitHub][github-test-image]][github-url] [![Travis][travis-image]][travis-url] [![npm][npm-image]][npm-url]
+# async-iterable-queue [![license][license-image]][license-url] [![npm][npm-image]][npm-url]
 
-[![coverage][nyc-cov-image]][github-url] [![maintenance][maintenance-image]][npmsio-url] [![quality][quality-image]][npmsio-url]
+[![coverage][nyc-cov-image]][github-url] [![dependency][depencency-image]][dependency-url] [![maintenance][maintenance-image]][npmsio-url] [![quality][quality-image]][npmsio-url] [![github][github-test-image]][github-url] [![travis][travis-image]][travis-url]
 
 `async-iterable-queue` - A library for 'Queue' class which implements AsyncIterable\<T\> works on [Node.js](https://nodejs.org/)
 
@@ -62,7 +62,7 @@ example()
 
 [depencency-image]:https://img.shields.io/librariesio/release/npm/async-iterable-queue?logo=nodedotjs
 [dependency-url]:https://npmjs.com/package/async-iterable-queue?activeTab=dependencies
-[github-test-image]:https://img.shields.io/github/workflow/status/kei-g/async-iterable-queue/test/main?label=build%20%26%20test&logo=github
+[github-test-image]:https://img.shields.io/github/workflow/status/kei-g/async-iterable-queue/test/main?label=test%20%26%20build&logo=github
 [github-url]:https://github.com/kei-g/async-iterable-queue
 [license-image]:https://img.shields.io/github/license/kei-g/async-iterable-queue
 [license-url]:https://opensource.org/licenses/BSD-3-Clause
@@ -70,7 +70,7 @@ example()
 [npm-image]:https://img.shields.io/npm/v/async-iterable-queue.svg?logo=npm
 [npm-url]:https://npmjs.org/package/async-iterable-queue
 [npmsio-url]:https://npms.io/search?q=async-iterable-queue
-[nyc-cov-image]:https://img.shields.io/nycrc/kei-g/async-iterable-queue?config=.nycrc.json&label=coverage
+[nyc-cov-image]:https://img.shields.io/nycrc/kei-g/async-iterable-queue?config=.nycrc.json&label=coverage&logo=mocha
 [quality-image]:https://img.shields.io/npms-io/quality-score/async-iterable-queue?logo=npm
-[travis-image]:https://img.shields.io/travis/com/kei-g/async-iterable-queue/main?label=build%20%26%20test&logo=travis
+[travis-image]:https://img.shields.io/travis/com/kei-g/async-iterable-queue/main?label=test%20%26%20build&logo=travis
 [travis-url]:https://app.travis-ci.com/kei-g/async-iterable-queue
