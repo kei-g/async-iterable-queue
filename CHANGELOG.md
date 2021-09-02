@@ -1,5 +1,11 @@
 # ChangeLogs
 
+## Version 1.0.7
+
+- :heavy_minus_sign: `uuid` is removed from development packages
+- :memo: Badges are updated
+- :pencil2: Fix typo of build script
+
 ## Version 1.0.6
 
 - :memo: Badge for Travis CI is corrected

@@ -56,8 +56,7 @@
     "rimraf": "^3.0.2",
     "terser": "^5.7.2",
     "ts-node": "^10.2.1",
-    "typescript": "^4.4.2",
-    "uuid": "^8.3.2"
+    "typescript": "^4.4.2"
   },
   "homepage": "https://github.com/kei-g/async-iterable-queue",
   "keywords": [
@@ -80,7 +79,7 @@
   },
   "scripts": {
     "build": "npm-run-all -p clean lint -s build:tsc -p build:terse:*",
-    "build:terse:async-iterable-queue": "terser build/lib/async-iterable-queue.js -c -m -o lib/async-iteable-queue.js --toplevel",
+    "build:terse:async-iterable-queue": "terser build/lib/async-iterable-queue.js -c -m -o lib/async-iterable-queue.js --toplevel",
     "build:terse:index": "terser build/index.js -c -m -o index.js --toplevel",
     "build:tsc": "tsc",
     "clean": "rimraf .nyc_output/ build/ coverage/ index.d.ts index.js lib/",
