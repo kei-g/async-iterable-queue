@@ -1,5 +1,21 @@
 # ChangeLogs
 
+## Version 1.0.8
+
+- :package: Badge section is deleted
+- :package: Email address is corrected
+- :arrow_up: Packages for development are updated
+  - `@types/chai` is upgraded from 4.2.21 to 4.2.22
+  - `@types/node` is upgraded from 16.7.8 to 16.11.6
+  - `@typescript-eslint/eslint-plugin` is upgraded from 4.30.0 to 5.3.0
+  - `@typescript-eslint/eslint-parser` is upgraded from 4.30.0 to 5.3.0
+  - `eslint` is upgraded from 7.32.0 to 8.2.0
+  - `mocha` is upgraded from 9.1.1 to 9.1.3
+  - `terser` is upgraded from 5.7.2 to 5.9.0
+  - `ts-node` is upgraded from 10.2.1 to 10.4.0
+  - `typescript` is upgraded from 4.4.2 to 4.4.4
+- :art: Some indents are fixed
+
 ## Version 1.0.7
 
 - :heavy_minus_sign: `uuid` is removed from development packages
