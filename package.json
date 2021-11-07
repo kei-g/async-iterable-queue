@@ -26,6 +26,9 @@
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
   },
+  "engines": {
+    "node": ">=14.17.5"
+  },
   "homepage": "https://github.com/kei-g/async-iterable-queue",
   "keywords": [
     "async",
