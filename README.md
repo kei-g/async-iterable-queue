@@ -1,6 +1,6 @@
 # async-iterable-queue [![license][license-image]][license-url] [![npm][npm-image]][npm-url]
 
-[![coverage][nyc-cov-image]][github-url] [![dependency][depencency-image]][dependency-url] [![maintenance][maintenance-image]][npmsio-url] [![quality][quality-image]][npmsio-url] [![github][github-test-image]][github-url] [![travis][travis-image]][travis-url]
+[![coverage][nyc-cov-image]][github-url] [![dependency][depencency-image]][dependency-url] [![maintenance][maintenance-image]][npmsio-url] [![quality][quality-image]][npmsio-url] [![github][github-test-image]][github-test-url] [![travis][travis-image]][travis-url]
 
 `async-iterable-queue` - A library for 'Queue' class which implements AsyncIterable\<T\> works on [Node.js](https://nodejs.org/)
 
@@ -62,7 +62,8 @@ example()
 
 [depencency-image]:https://img.shields.io/librariesio/release/npm/async-iterable-queue?logo=nodedotjs
 [dependency-url]:https://npmjs.com/package/async-iterable-queue?activeTab=dependencies
-[github-test-image]:https://img.shields.io/github/workflow/status/kei-g/async-iterable-queue/test/main?label=test%20%26%20build&logo=github
+[github-test-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/main.yml/badge.svg?branch=main
+[github-test-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/main.yml
 [github-url]:https://github.com/kei-g/async-iterable-queue
 [license-image]:https://img.shields.io/github/license/kei-g/async-iterable-queue
 [license-url]:https://opensource.org/licenses/BSD-3-Clause

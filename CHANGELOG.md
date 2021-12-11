@@ -1,5 +1,23 @@
 # ChangeLogs
 
+## Version 1.0.9
+
+- :wrench: 'engines' section is added to 'package.json'
+- :green_heart: Code coverage report is archived on GitHub CI
+- :robot: Dependabot is installed
+- :memo: GitHub Actions' canonical badge is used instead of Shields.io
+- :building_construction: Migration from `terser` to `esbuild`
+- :green_heart: Node.js is bumped from 16.8.0 to 16.13.1 for GitHub CI
+- :arrow_up: Packages for development are bumped
+  - `@types/chai` is bumped from 4.2.22 to 4.3.0
+  - `@types/node` is bumped from 16.11.6 to 16.11.12
+  - `@typescript-eslint/eslint-plugin` is bumped from 5.3.0 to 5.6.0
+  - `@typescript-eslint/parser` is bumped from 5.3.0 to 5.6.0
+  - `eslint` is bumped from 8.2.0 to 8.4.1
+  - `typescript` is bumped from 4.4.4 to 4.5.3
+- :wrench: URL of the repository is simplified
+- :wrench: Unnecessary 'categories' section is purged from 'package.json'
+
 ## Version 1.0.8
 
 - :package: Badge section is deleted
@@ -8,7 +26,7 @@
   - `@types/chai` is upgraded from 4.2.21 to 4.2.22
   - `@types/node` is upgraded from 16.7.8 to 16.11.6
   - `@typescript-eslint/eslint-plugin` is upgraded from 4.30.0 to 5.3.0
-  - `@typescript-eslint/eslint-parser` is upgraded from 4.30.0 to 5.3.0
+  - `@typescript-eslint/parser` is upgraded from 4.30.0 to 5.3.0
   - `eslint` is upgraded from 7.32.0 to 8.2.0
   - `mocha` is upgraded from 9.1.1 to 9.1.3
   - `terser` is upgraded from 5.7.2 to 5.9.0
