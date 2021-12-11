@@ -43,6 +43,12 @@ jobs:
         run: npm install
       - name: Check code coverages
         run: npm test
+      - name: Archive code coverage report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage-report-${{ matrix.node }}
+          path: coverage
   example:
     name: Run an example on Node.js ${{ matrix.node }}
     runs-on: ubuntu-latest
