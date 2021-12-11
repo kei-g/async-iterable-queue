@@ -50,6 +50,7 @@
     "cover": "nyc --check-coverage -r html -r text _mocha",
     "lint": "eslint src/**/*.ts",
     "prebuild": "run-s clean",
+    "postpublish": "run-s clean",
     "prepublishOnly": "run-s build",
     "start": "ts-node example.ts",
     "test": "run-p lint cover"
