@@ -2,6 +2,8 @@ jobs:
   build:
     continue-on-error: true
     name: Build on Node.js ${{ matrix.node }}
+    outputs:
+      result: ${{ steps.build.outputs.result }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -22,10 +24,13 @@ jobs:
       - name: Setup modules
         run: npm install
       - name: Build
-        run: npm run build
+        id: build
+        run: npm run build && echo "::set-output name=result::success"
   coverage:
     continue-on-error: true
     name: Check code coverages on Node.js ${{ matrix.node }}
+    outputs:
+      result: ${{ steps.coverage.outputs.result }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -46,7 +51,8 @@ jobs:
       - name: Setup modules
         run: npm install
       - name: Check code coverages
-        run: npm test
+        id: coverage
+        run: npm test && echo "::set-output name=result::success"
       - name: Archive code coverage report
         if: ${{ always() }}
         uses: actions/upload-artifact@v2
@@ -56,6 +62,8 @@ jobs:
   example:
     continue-on-error: true
     name: Run an example on Node.js ${{ matrix.node }}
+    outputs:
+      result: ${{ steps.example.outputs.result }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -76,7 +84,22 @@ jobs:
       - name: Setup modules
         run: npm install
       - name: Run an example
-        run: npm start
+        id: example
+        run: npm start && echo "::set-output name=result::success"
+  test:
+    name: Aggregate results
+    needs:
+      - build
+      - coverage
+      - example
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check build result
+        run: test "${{ needs.build.outputs.result }}" = "success" || { echo "\x1b[31mFailed to build\x1b[m"; exit 1; }
+      - name: Check code coverages result
+        run: test "${{ needs.coverage.outputs.result }}" = "success" || { echo "\x1b[31mFailed to check code coverages\x1b[m"; exit 1; }
+      - name: Check example result
+        run: test "${{ needs.example.outputs.result }}" = "success" || { echo "\x1b[31mFailed to run an example\x1b[m"; exit 1; }
 name: test
 on:
   pull_request:
