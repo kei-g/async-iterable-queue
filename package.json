@@ -44,10 +44,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kei-g/async-iterable-queue.git"
-  },
+  "repository": "github:kei-g/async-iterable-queue",
   "scripts": {
     "build": "npm-run-all -p clean lint -s build:tsc -p build:terse:*",
     "build:terse:async-iterable-queue": "terser build/lib/async-iterable-queue.js -c -m -o lib/async-iterable-queue.js --toplevel",
