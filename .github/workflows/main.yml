@@ -43,6 +43,28 @@ jobs:
         run: npm install
       - name: Check code coverages
         run: npm test
+  example:
+    name: Run an example on Node.js ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node:
+          - '14.17.5'
+          - '16.13.1'
+          - '17.2.0'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Setup modules
+        run: npm install
+      - name: Run an example
+        run: npm start
 name: test
 on:
   pull_request:
