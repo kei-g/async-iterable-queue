@@ -60,6 +60,10 @@ async function example(): Promise<void> {
 example()
 ```
 
+## Lincense
+
+The scripts and documentation in this project are released under the [BSD-3-Clause License](https://github.com/kei-g/async-iterable-queue/blob/main/LICENSE)
+
 ## Contributions
 
 Contributions are welcome! See [Contributor's Guide](https://github.com/kei-g/async-iterable-queue/blob/main/CONTRIBUTING.md)
