@@ -1,8 +1,10 @@
 jobs:
   build:
+    continue-on-error: true
     name: Build on Node.js ${{ matrix.node }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         node:
           - '14.17.5'
@@ -22,9 +24,11 @@ jobs:
       - name: Build
         run: npm run build
   coverage:
+    continue-on-error: true
     name: Check code coverages on Node.js ${{ matrix.node }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         node:
           - '14.17.5'
@@ -50,9 +54,11 @@ jobs:
           name: code-coverage-report-${{ matrix.node }}
           path: coverage
   example:
+    continue-on-error: true
     name: Run an example on Node.js ${{ matrix.node }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         node:
           - '14.17.5'
