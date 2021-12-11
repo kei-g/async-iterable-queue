@@ -43,14 +43,14 @@
   },
   "repository": "github:kei-g/async-iterable-queue",
   "scripts": {
-    "build": "npm-run-all -p clean lint -p build:bundle build:tsc",
+    "build": "run-p build:bundle build:tsc",
     "build:bundle": "esbuild src/index.ts --bundle --minify --outfile=index.js --platform=node --target=ES2015",
     "build:tsc": "tsc",
     "clean": "rimraf .nyc_output/ coverage/ index.d.ts index.js lib/",
     "cover": "nyc --check-coverage -r html -r text _mocha",
     "lint": "eslint src/**/*.ts",
-    "prebuild": "run-s clean",
     "postpublish": "run-s clean",
+    "prebuild": "run-p clean lint",
     "prepublishOnly": "run-s build",
     "start": "ts-node example.ts",
     "test": "run-p lint cover"
