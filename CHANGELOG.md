@@ -1,5 +1,17 @@
 # ChangeLogs
 
+## Version 1.0.10
+
+- :wrench: 'clean' is made to be invoked after 'publish'
+- :adhesive_bandage: 'lib/index.ts' is added
+- :wrench: 'lint' is made to be invoked before 'build'
+- :green_heart: 'paths-ignore' section is added for GitHub CI
+- :memo: CONTRIBUTING.md is added
+- :memo: README.md is updated
+  - contributions section is added
+  - license section is added
+- :green_heart: Step to report code coverages is renamed
+
 ## Version 1.0.9
 
 - :wrench: 'engines' section is added to 'package.json'
