@@ -6,7 +6,7 @@
     "declarationDir": ".",
     "downlevelIteration": true,
     "emitBOM": false,
-    "emitDeclarationOnly": false,
+    "emitDeclarationOnly": true,
     "emitDecoratorMetadata": false,
     "experimentalDecorators": false,
     "lib": [
@@ -15,18 +15,17 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "newLine": "lf",
-    "outDir": "build",
     "pretty": false,
     "removeComments": true,
     "strict": true,
     "strictNullChecks": false,
-    "target": "ES6",
+    "target": "ES2015",
     "typeRoots": [
       "node_modules/@types",
     ],
   },
-  "files": [
-    "src/index.ts",
-    "src/lib/async-iterable-queue.ts",
-  ]
+  "exclude": [],
+  "include": [
+    "src",
+  ],
 }
