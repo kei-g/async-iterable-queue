@@ -6,9 +6,6 @@
   "bugs": {
     "url": "https://github.com/kei-g/async-iterable-queue/issues"
   },
-  "categories": [
-    "Other"
-  ],
   "description": "Async Iterable Queue",
   "devDependencies": {
     "@types/chai": "^4.2.22",
