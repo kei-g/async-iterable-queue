@@ -112,3 +112,10 @@ on:
       - devel
       - main
       - release
+    paths-ignore:
+      - '**.md'
+      - '.editorconfig'
+      - '.gitignore'
+      - '.npmignore'
+      - '.travis.yml'
+      - 'LICENSE'
