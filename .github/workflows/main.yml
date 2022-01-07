@@ -21,6 +21,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
+      - name: Upgrade npm
+        run: npm install npm@latest -g
       - name: Setup modules
         run: npm install
       - name: Build
@@ -48,6 +50,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
+      - name: Upgrade npm
+        run: npm install npm@latest -g
       - name: Setup modules
         run: npm install
       - name: Check code coverages
@@ -81,6 +85,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
+      - name: Upgrade npm
+        run: npm install npm@latest -g
       - name: Setup modules
         run: npm install
       - name: Run an example
