@@ -1,6 +1,6 @@
 # async-iterable-queue [![license][license-image]][license-url] [![npm][npm-image]][npm-url]
 
-[![coverage][nyc-cov-image]][github-url] [![dependency][depencency-image]][dependency-url] [![maintenance][maintenance-image]][npmsio-url] [![quality][quality-image]][npmsio-url] [![github][github-test-image]][github-test-url]
+[![coverage][nyc-cov-image]][github-url] [![dependency][depencency-image]][dependency-url] [![maintenance][maintenance-image]][npmsio-url] [![quality][quality-image]][npmsio-url] [![GitHub CI (Build)][github-build-image]][github-build-url] [![GitHub CI (Coverage)][github-coverage-image]][github-coverage-url] [![GitHub CI (Example)][github-example-image]][github-example-url]
 
 `async-iterable-queue` - A library for 'Queue' class which implements AsyncIterable\<T\> works on [Node.js](https://nodejs.org/)
 
@@ -74,8 +74,12 @@ Contributions are welcome! See [Contributor's Guide](https://github.com/kei-g/as
 
 [depencency-image]:https://img.shields.io/librariesio/release/npm/async-iterable-queue?logo=nodedotjs
 [dependency-url]:https://npmjs.com/package/async-iterable-queue?activeTab=dependencies
-[github-test-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/main.yml/badge.svg?branch=main
-[github-test-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/main.yml
+[github-build-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/build.yml/badge.svg
+[github-build-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/build.yml
+[github-coverage-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/coverage.yml/badge.svg
+[github-coverage-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/coverage.yml
+[github-example-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/example.yml/badge.svg
+[github-example-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/example.yml
 [github-url]:https://github.com/kei-g/async-iterable-queue
 [license-image]:https://img.shields.io/github/license/kei-g/async-iterable-queue
 [license-url]:https://opensource.org/licenses/BSD-3-Clause
