@@ -1,8 +1,16 @@
 # async-iterable-queue [![license][license-image]][license-url] [![npm][npm-image]][npm-url]
 
-[![coverage][nyc-cov-image]][github-url] [![dependency][depencency-image]][dependency-url] [![maintenance][maintenance-image]][npmsio-url] [![quality][quality-image]][npmsio-url] [![github][github-test-image]][github-test-url] [![travis][travis-image]][travis-url]
+[![coverage][nyc-cov-image]][github-url] [![dependency][depencency-image]][dependency-url] [![maintenance][maintenance-image]][npmsio-url] [![quality][quality-image]][npmsio-url]
 
 `async-iterable-queue` - A library for 'Queue' class which implements AsyncIterable\<T\> works on [Node.js](https://nodejs.org/)
+
+## CI Status
+
+| Branches \ Targets | Build | Coverage | Example |
+| ---- | ---- | ---- | ----
+| devel | [![GitHub CI (Build)][github-devel-build-image]][github-devel-build-url] | [![GitHub CI (Coverage)][github-devel-coverage-image]][github-devel-coverage-url] | [![GitHub CI (Example)][github-devel-example-image]][github-devel-example-url] |
+| main | [![GitHub CI (Build)][github-main-build-image]][github-main-build-url] | [![GitHub CI (Coverage)][github-main-coverage-image]][github-main-coverage-url] | [![GitHub CI (Example)][github-main-example-image]][github-main-example-url] |
+| release | [![GitHub CI (Build)][github-release-build-image]][github-release-build-url] | [![GitHub CI (Coverage)][github-release-coverage-image]][github-release-coverage-url] | [![GitHub CI (Example)][github-release-example-image]][github-release-example-url] |
 
 ## Installation
 
@@ -74,8 +82,24 @@ Contributions are welcome! See [Contributor's Guide](https://github.com/kei-g/as
 
 [depencency-image]:https://img.shields.io/librariesio/release/npm/async-iterable-queue?logo=nodedotjs
 [dependency-url]:https://npmjs.com/package/async-iterable-queue?activeTab=dependencies
-[github-test-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/main.yml/badge.svg?branch=main
-[github-test-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/main.yml
+[github-devel-build-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/build.yml/badge.svg?branch=devel
+[github-devel-build-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/build.yml?branch=devel
+[github-devel-coverage-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/coverage.yml/badge.svg?branch=devel
+[github-devel-coverage-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/coverage.yml?branch=devel
+[github-devel-example-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/example.yml/badge.svg?branch=devel
+[github-devel-example-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/example.yml?branch=devel
+[github-main-build-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/build.yml/badge.svg?branch=main
+[github-main-build-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/build.yml?branch=main
+[github-main-coverage-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/coverage.yml/badge.svg?branch=main
+[github-main-coverage-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/coverage.yml?branch=main
+[github-main-example-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/example.yml/badge.svg?branch=main
+[github-main-example-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/example.yml?branch=main
+[github-release-build-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/build.yml/badge.svg?branch=release
+[github-release-build-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/build.yml?branch=release
+[github-release-coverage-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/coverage.yml/badge.svg?branch=release
+[github-release-coverage-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/coverage.yml?branch=release
+[github-release-example-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/example.yml/badge.svg?branch=release
+[github-release-example-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/example.yml?branch=release
 [github-url]:https://github.com/kei-g/async-iterable-queue
 [license-image]:https://img.shields.io/github/license/kei-g/async-iterable-queue
 [license-url]:https://opensource.org/licenses/BSD-3-Clause
@@ -85,5 +109,3 @@ Contributions are welcome! See [Contributor's Guide](https://github.com/kei-g/as
 [npmsio-url]:https://npms.io/search?q=async-iterable-queue
 [nyc-cov-image]:https://img.shields.io/nycrc/kei-g/async-iterable-queue?config=.nycrc.json&label=coverage&logo=mocha
 [quality-image]:https://img.shields.io/npms-io/quality-score/async-iterable-queue?logo=npm
-[travis-image]:https://img.shields.io/travis/com/kei-g/async-iterable-queue/main?label=test%20%26%20build&logo=travis
-[travis-url]:https://app.travis-ci.com/kei-g/async-iterable-queue

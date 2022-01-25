@@ -1,0 +1,50 @@
+jobs:
+  coverage:
+    name: Check code coverages on Node.js ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node:
+          - '14.17.5'
+          - '16.13.1'
+          - '17.2.0'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Upgrade npm
+        run: npm install npm@latest -g
+      - name: Setup modules
+        run: npm ci
+      - name: Check code coverages
+        run: npm test
+      - name: Archive code coverage report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage-report-${{ github.event.repository.name }}-${{ matrix.node }}
+          path: coverage
+name: Coverage
+on:
+  pull_request:
+    branches:
+      - devel
+      - main
+      - release
+  push:
+    branches:
+      - devel
+      - main
+      - release
+    paths-ignore:
+      - '**.md'
+      - '.editorconfig'
+      - '.gitignore'
+      - '.npmignore'
+      - 'LICENSE'
