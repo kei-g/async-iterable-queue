@@ -1,6 +1,6 @@
 # async-iterable-queue [![license][license-image]][license-url] [![npm][npm-image]][npm-url]
 
-[![coverage][nyc-cov-image]][github-url] [![dependency][depencency-image]][dependency-url] [![maintenance][maintenance-image]][npmsio-url] [![quality][quality-image]][npmsio-url] [![github][github-test-image]][github-test-url] [![travis][travis-image]][travis-url]
+[![coverage][nyc-cov-image]][github-url] [![dependency][depencency-image]][dependency-url] [![maintenance][maintenance-image]][npmsio-url] [![quality][quality-image]][npmsio-url] [![github][github-test-image]][github-test-url]
 
 `async-iterable-queue` - A library for 'Queue' class which implements AsyncIterable\<T\> works on [Node.js](https://nodejs.org/)
 
@@ -85,5 +85,3 @@ Contributions are welcome! See [Contributor's Guide](https://github.com/kei-g/as
 [npmsio-url]:https://npms.io/search?q=async-iterable-queue
 [nyc-cov-image]:https://img.shields.io/nycrc/kei-g/async-iterable-queue?config=.nycrc.json&label=coverage&logo=mocha
 [quality-image]:https://img.shields.io/npms-io/quality-score/async-iterable-queue?logo=npm
-[travis-image]:https://img.shields.io/travis/com/kei-g/async-iterable-queue/main?label=test%20%26%20build&logo=travis
-[travis-url]:https://app.travis-ci.com/kei-g/async-iterable-queue

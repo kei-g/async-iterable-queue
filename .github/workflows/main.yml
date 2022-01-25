@@ -123,5 +123,4 @@ on:
       - '.editorconfig'
       - '.gitignore'
       - '.npmignore'
-      - '.travis.yml'
       - 'LICENSE'
