@@ -68,7 +68,7 @@ async function example(): Promise<void> {
 example()
 ```
 
-## Lincense
+## License
 
 The scripts and documentation in this project are released under the [BSD-3-Clause License](https://github.com/kei-g/async-iterable-queue/blob/main/LICENSE)
 
