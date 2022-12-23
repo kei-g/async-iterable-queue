@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "**/LICENSE": "plaintext",
+  },
+  "files.exclude": {
+    "node_modules": true,
+  },
+}
