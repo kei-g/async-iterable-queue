@@ -1,7 +1,6 @@
 **/*.d.ts
 **/*.js
 **/.nyc_output/
-**/.vscode/
 **/coverage/
 **/lib/
 **/node_modules/
