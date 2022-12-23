@@ -6,9 +6,9 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '14.17.5'
-          - '16.13.1'
-          - '17.2.0'
+          - 14
+          - 16
+          - 18
     steps:
       - name: Checkout
         uses: actions/checkout@v3
