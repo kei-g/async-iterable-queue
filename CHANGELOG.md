@@ -1,5 +1,29 @@
 # ChangeLogs
 
+## Version 1.0.11
+
+- :green_heart: CI chore
+  - A Farewell to Travis
+  - CodeQL is installed
+  - links on CI status badges are related specific branches
+  - looser Node.js versions are specified
+  - open-pull-requests-limit is increased up to 16
+  - workflows are separated
+- :hear_no_evil: CONTRIBUTING.md is added to .npmignore
+- :arrow_up: Packages for development are bumped
+  - `@types/chai` is bumped from 4.3.0 to 4.3.7
+  - `@types/mocha` is bumped from 9.0.0 to 10.0.1
+  - `@types/node` is bumped from 16.11.12 to 18.11.17
+  - `@typescript-eslint/eslint-plugin` is bumped from 5.6.0 to 5.47.0
+  - `@typescript-eslint/parser` is bumped from 5.6.0 to 5.47.0
+  - `chai` is bumped from 4.3.4 to 4.3.7
+  - `esbuild` is bumped from 0.14.2 to 0.16.10
+  - `eslint` is bumped from 8.4.1 to 8.30.0
+  - `mocha` is bumped from 9.1.3 to 10.2.0
+  - `ts-node` is bumped from 10.4.0 to 10.9.1
+  - `typescript` is bumped from 4.5.3 to 4.9.4
+- :pencil2: Typo on README.md is fixed
+
 ## Version 1.0.10
 
 - :wrench: 'clean' is made to be invoked after 'publish'

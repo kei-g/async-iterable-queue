@@ -1,0 +1,15 @@
+{
+  "version": "0.2",
+  "words": [
+    "asynciterable",
+    "autobuild",
+    "codeql",
+    "devel",
+    "esbuild",
+    "linebreak",
+    "npmignore",
+    "outfile",
+    "postpublish",
+    "tada"
+  ]
+}
