@@ -1,8 +1,12 @@
-version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - directory: /
     open-pull-requests-limit: 16
+    package-ecosystem: github-actions
     schedule:
-      interval: "daily"
-    target-branch: devel
+      interval: daily
+  - directory: /
+    open-pull-requests-limit: 16
+    package-ecosystem: npm
+    schedule:
+      interval: daily
+version: 2
