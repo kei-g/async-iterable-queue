@@ -1,5 +1,6 @@
 jobs:
   coverage:
+    if: github.ref_type == 'branch'
     name: Check code coverages on Node.js ${{ matrix.node }}
     runs-on: ubuntu-latest
     strategy:
@@ -34,17 +35,7 @@ name: Coverage
 on:
   pull_request:
     branches:
-      - devel
-      - main
-      - release
+      - '**'
   push:
     branches:
-      - devel
-      - main
-      - release
-    paths-ignore:
-      - '**.md'
-      - '.editorconfig'
-      - '.gitignore'
-      - '.npmignore'
-      - 'LICENSE'
+      - '**'

@@ -1,5 +1,6 @@
 jobs:
   analyze:
+    if: github.ref_type == 'branch'
     name: Analyze
     permissions:
       actions: read
@@ -28,13 +29,7 @@ name: CodeQL
 on:
   pull_request:
     branches:
-      - devel
-      - main
-      - release
+      - '**'
   push:
     branches:
-      - devel
-      - main
-      - release
-  schedule:
-    - cron: '19 13 * * 3'
+      - '**'

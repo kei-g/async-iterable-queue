@@ -1,0 +1,68 @@
+jobs:
+  github:
+    if: github.ref_type == 'tag'
+    name: GitHub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      - id: commit_summary
+        name: Get commit summary
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const child_process = require('node:child_process')
+            const { ref } = context
+            core.setOutput('version', ref.slice(11))
+            child_process.execSync(`git fetch --depth 1 origin +${ref}:${ref}`)
+            child_process.exec(
+              `git for-each-ref --format='%(contents)' ${ref}`,
+              {},
+              (err, stdout, stderr) => {
+                const i = stdout.search(/Signed\-off\-by\:\ /g)
+                if (i < 0)
+                  core.setFailed('There is no signature')
+                else
+                  core.setOutput('message', stdout.slice(0, i))
+              }
+            )
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: Create Release
+        uses: actions/create-release@v1
+        with:
+          body: |
+            ${{ steps.commit_summary.outputs.message }}
+          draft: false
+          prerelease: false
+          release_name: Version ${{ steps.commit_summary.outputs.version }}
+          tag_name: v${{ steps.commit_summary.outputs.version }}
+  npm:
+    if: github.ref_type == 'tag'
+    name: npm
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Upgrade npm
+        run: npm install npm@latest -g
+      - name: Setup modules
+        run: npm ci
+      - env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        name: Publish
+        run: npm publish
+name: Release
+on:
+  create:
+    tags:
+      - 'v[0-9]+(\.[0-9]+)*(\-[0-9A-Za-z]+)*'
