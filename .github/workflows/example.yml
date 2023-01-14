@@ -1,5 +1,6 @@
 jobs:
   example:
+    if: github.ref_type == 'branch'
     name: Run an example on Node.js ${{ matrix.node }}
     outputs:
       result: ${{ steps.example.outputs.result }}
@@ -30,17 +31,7 @@ name: Example
 on:
   pull_request:
     branches:
-      - devel
-      - main
-      - release
+      - '**'
   push:
     branches:
-      - devel
-      - main
-      - release
-    paths-ignore:
-      - '**.md'
-      - '.editorconfig'
-      - '.gitignore'
-      - '.npmignore'
-      - 'LICENSE'
+      - '**'
