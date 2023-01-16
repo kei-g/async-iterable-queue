@@ -19,12 +19,14 @@ jobs:
             child_process.exec(
               `git fetch --depth 1 origin +${ref}:${ref}`,
               {}
-              () => child_process.exec(
+              (err, stdout, stderr) => child_process.exec(
                 `git for-each-ref --format='%(contents)' ${ref}`,
                 {},
                 async (err, stdout, stderr) => {
-                  if (err)
-                    return core.setFailed(err)
+                  if (err) {
+                    core.setFailed(err)
+                    return
+                  }
                   const i = stdout.search(/^Signed\-off\-by\:\ /g)
                   const j = stdout.search(/^\-{5}BEGIN\ PGP\ SIGNATURE\-{5}$/g)
                   const body = i < 0 ? j < 0 ? stdout : stdout.slice(0, j) : stdout.slice(0, i)
