@@ -1,5 +1,11 @@
 # ChangeLogs
 
+## Version 1.0.13
+
+- :arrow_up: Packages for development are bumped
+  - `eslint` is bumped from 8.31.0 to 8.32.0
+  - `rimraf` is bumped from 4.0.4 to 4.0.7
+
 ## Version 1.0.12
 
 - :arrow_up: Packages for development are bumped
