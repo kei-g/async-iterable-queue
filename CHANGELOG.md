@@ -1,5 +1,10 @@
 # ChangeLogs
 
+## Version 1.0.14
+
+- :green_heart: CI chore
+  - Alternate implement instead of `actions/create-release`
+
 ## Version 1.0.13
 
 - :arrow_up: Packages for development are bumped
