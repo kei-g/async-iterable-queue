@@ -18,17 +18,15 @@ jobs:
             const child_process = require('node:child_process')
             child_process.exec(
               `git fetch --depth 1 origin +${ref}:${ref}`,
-              {}
-              (err, stdout, stderr) => child_process.exec(
+              {},
+              () => child_process.exec(
                 `git for-each-ref --format='%(contents)' ${ref}`,
                 {},
                 async (err, stdout, stderr) => {
-                  if (err) {
-                    core.setFailed(err)
-                    return
-                  }
-                  const i = stdout.search(/^Signed\-off\-by\:\ /g)
-                  const j = stdout.search(/^\-{5}BEGIN\ PGP\ SIGNATURE\-{5}$/g)
+                  if (err)
+                    return core.setFailed(err)
+                  const i = stdout.search(/Signed\-off\-by\:\ /g)
+                  const j = stdout.search(/\-{5}BEGIN\ PGP\ SIGNATURE\-{5}$/g)
                   const body = i < 0 ? j < 0 ? stdout : stdout.slice(0, j) : stdout.slice(0, i)
                   const response = await github.request(
                     `POST /repos/${owner}/${repo}/releases`,
