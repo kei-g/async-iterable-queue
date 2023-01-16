@@ -1,5 +1,10 @@
 # ChangeLogs
 
+## Version 1.0.15
+
+- :green_heart: CI chore
+  - The missing comma made up
+
 ## Version 1.0.14
 
 - :green_heart: CI chore
