@@ -4,6 +4,7 @@
     "asynciterable",
     "autobuild",
     "codeql",
+    "commitish",
     "devel",
     "esbuild",
     "linebreak",
