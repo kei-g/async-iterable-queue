@@ -1,6 +1,5 @@
 jobs:
   build:
-    if: github.ref_type == 'branch'
     name: Build on Node.js ${{ matrix.node }}
     runs-on: ubuntu-latest
     strategy:
@@ -27,9 +26,6 @@ jobs:
         run: npm run build
 name: Build
 on:
-  pull_request:
-    branches:
-      - '**'
   push:
     branches:
-      - '**'
+      - main

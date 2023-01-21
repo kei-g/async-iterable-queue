@@ -1,6 +1,5 @@
 jobs:
   example:
-    if: github.ref_type == 'branch'
     name: Run an example on Node.js ${{ matrix.node }}
     outputs:
       result: ${{ steps.example.outputs.result }}
@@ -29,9 +28,6 @@ jobs:
         run: npm start
 name: Example
 on:
-  pull_request:
-    branches:
-      - '**'
   push:
     branches:
-      - '**'
+      - main

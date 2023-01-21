@@ -1,6 +1,5 @@
 jobs:
   github:
-    if: github.ref_type == 'tag'
     name: GitHub
     runs-on: ubuntu-latest
     steps:
@@ -59,7 +58,6 @@ jobs:
               )
             )
   npm:
-    if: github.ref_type == 'tag'
     name: npm
     runs-on: ubuntu-latest
     steps:
@@ -82,6 +80,6 @@ jobs:
         run: npm publish
 name: Release
 on:
-  create:
+  push:
     tags:
       - 'v[0-9]+(\.[0-9]+)*(\-[0-9A-Za-z]+)*'
