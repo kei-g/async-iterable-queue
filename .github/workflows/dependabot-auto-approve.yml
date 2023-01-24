@@ -1,0 +1,25 @@
+jobs:
+  approve:
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    name: Approve
+    runs-on: ubuntu-latest
+    steps:
+      - id: dependabot-metadata
+        name: Dependabot metadata
+        uses: dependabot/fetch-metadata@v1
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        if: ${{ steps.dependabot-metadata.outputs.update-type == 'version-update:semver-patch' }}
+        name: Approve a PR
+        run: |
+          gh pr review --approve "$PR_URL"
+name: Dependabot auto-approve
+on:
+  pull_request_target:
+    types:
+      - opened
+permissions:
+  pull-requests: write
