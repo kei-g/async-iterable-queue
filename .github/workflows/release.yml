@@ -1,64 +1,15 @@
 jobs:
   github:
-    name: GitHub
+    if: github.ref_type == 'tag'
+    name: Create a release on GitHub
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
       - name: Create a release
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const { owner, repo } = context.repo
-            const { ref, sha } = context
-            const version = ref.slice(11)
-            const child_process = require('node:child_process')
-            child_process.exec(
-              `git fetch --depth 1 origin +${ref}:${ref}`,
-              {},
-              () => child_process.exec(
-                `git for-each-ref --format='%(contents)' ${ref}`,
-                {},
-                async (err, stdout, stderr) => {
-                  if (err)
-                    return core.setFailed(err)
-                  const i = stdout.search(/Signed\-off\-by\:\ /g)
-                  const j = stdout.search(/\-{5}BEGIN\ PGP\ SIGNATURE\-{5}$/g)
-                  const body = i < 0 ? j < 0 ? stdout : stdout.slice(0, j) : stdout.slice(0, i)
-                  const response = await github.request(
-                    `POST /repos/${owner}/${repo}/releases`,
-                    {
-                      body,
-                      draft: false,
-                      name: `Version ${version}`,
-                      owner,
-                      prerelease: false,
-                      repo,
-                      tag_name: `v${version}`,
-                      target_commitish: sha,
-                    }
-                  )
-                  switch (response.status) {
-                    case 201:
-                      core.setOutput('result', 'success')
-                      break
-                    case 404:
-                      core.setFailed('Not Found if the discussion category name is invalid')
-                      break
-                    case 422:
-                      core.setFailed('Validation failed, or the endpoint has been spammed')
-                      break
-                    default:
-                      core.setFailed(`Unknown error, status=${response.status}`)
-                      break
-                  }
-                }
-              )
-            )
+        uses: kei-g/github/create-release@main
   npm:
-    name: npm
+    name: Publish
+    needs:
+      - github
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -81,7 +32,5 @@ jobs:
 name: Release
 on:
   create:
-    branches-ignore:
-      - '**'
     tags:
       - 'v[0-9]+(\.[0-9]+)*(\-[0-9A-Za-z]+)*'
