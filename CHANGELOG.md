@@ -1,5 +1,24 @@
 # ChangeLogs
 
+## Version 1.0.16
+
+- :green_heart: CI chore
+  - Add the workflow to automatically merge PRs from Dependabot[bot]
+  - Ignore events that branch is created not to run 'Release' workflow
+  - Reduce triggers to run GitHub Actions
+  - Use `kei-g/github/create-release` action to create a release on GitHub
+  - Use the latest Node.js to publish
+- :arrow_up: Packages for development are bumped
+  - `@types/chai` is bumped from 4.3.4 to 4.3.5
+  - `@types/node` is bumped from 18.11.18 to 20.5.8
+  - `@typescript-eslint/eslint-plugin` is bumped from 5.48.1 to 6.5.0
+  - `@typescript-eslint/parser` is bumped from 5.48.1 to 6.5.0
+  - `chai` is bumped from 4.3.7 to 4.3.8
+  - `esbuild` is bumped from 0.17.0 to 0.19.2
+  - `eslint` is bumped from 8.32.0 to 8.48.0
+  - `rimraf` is bumped from 4.0.7 to 5.0.1
+  - `typescript` is bumped from 4.9.4 to 5.2.2
+
 ## Version 1.0.15
 
 - :green_heart: CI chore
