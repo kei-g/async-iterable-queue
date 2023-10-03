@@ -1,5 +1,4 @@
 concurrency:
-  cancel-in-progress: false
   group: dependabot
 jobs:
   approve:
