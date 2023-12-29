@@ -3,6 +3,6 @@
   "extension": [
     "ts"
   ],
-  "require": "ts-node/register",
+  "require": "esbuild-register",
   "timeout": 5000
 }
