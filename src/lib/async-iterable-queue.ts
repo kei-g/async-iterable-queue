@@ -48,8 +48,12 @@ class AIQAsyncIterator<T> implements AsyncIterator<T> {
  * 非同期反復可能な先入れ先出し型の待ち行列の状態を表す型
  */
 enum AIQState {
+  // NOTE: - False positive warnings
+  // eslint-disable-next-line no-unused-vars
   ending = 1,
+  // eslint-disable-next-line no-unused-vars
   finished = 2,
+  // eslint-disable-next-line no-unused-vars
   undefined = 0,
 }
 
@@ -220,19 +224,20 @@ type Resolver<T> =
  * 引数1個の関数型
  */
 type SingleParameterAction<T> =
-  (arg: T) => void
+  (_arg: T) => void
 
 /**
  * 終端
  */
 class Terminator {
+  private readonly cb?: NoParameterCallback
+
   /**
    * コンストラクタ
    * @param cb コールバック関数
    */
-  constructor(
-    private readonly cb?: NoParameterCallback,
-  ) {
+  constructor(cb?: NoParameterCallback) {
+    this.cb = cb
   }
 
   /**
