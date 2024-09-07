@@ -5,4 +5,9 @@
   "files.exclude": {
     "node_modules": true,
   },
+  "markdownlint.config": {
+    "MD009": false,
+    "MD013": false,
+    "MD034": false,
+  }
 }
