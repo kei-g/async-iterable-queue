@@ -1,6 +1,6 @@
 # async-iterable-queue [![license][license-image]][license-url] [![npm][npm-image]][npm-url]
 
-[![coverage][nyc-cov-image]][github-url] [![dependency][depencency-image]][dependency-url] [![maintenance][maintenance-image]][npmsio-url] [![quality][quality-image]][npmsio-url]
+[![dependency][depencency-image]][dependency-url] [![maintenance][maintenance-image]][npmsio-url] [![quality][quality-image]][npmsio-url]
 
 `async-iterable-queue` - A library for 'Queue' class which implements AsyncIterable\<T\> works on [Node.js](https://nodejs.org/)
 
@@ -91,12 +91,10 @@ Contributions are welcome! See [Contributor's Guide](https://github.com/kei-g/as
 [github-coverage-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/coverage.yml?query=branch%3Amain
 [github-example-image]:https://github.com/kei-g/async-iterable-queue/actions/workflows/example.yml/badge.svg?branch=main
 [github-example-url]:https://github.com/kei-g/async-iterable-queue/actions/workflows/example.yml?query=branch%3Amain
-[github-url]:https://github.com/kei-g/async-iterable-queue
 [license-image]:https://img.shields.io/github/license/kei-g/async-iterable-queue
 [license-url]:https://opensource.org/licenses/BSD-3-Clause
 [maintenance-image]:https://img.shields.io/npms-io/maintenance-score/async-iterable-queue?logo=npm
 [npm-image]:https://img.shields.io/npm/v/async-iterable-queue.svg?logo=npm
 [npm-url]:https://npmjs.org/package/async-iterable-queue
 [npmsio-url]:https://npms.io/search?q=async-iterable-queue
-[nyc-cov-image]:https://img.shields.io/nycrc/kei-g/async-iterable-queue?config=.nycrc.json&label=coverage&logo=mocha
 [quality-image]:https://img.shields.io/npms-io/quality-score/async-iterable-queue?logo=npm
