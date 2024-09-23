@@ -14,7 +14,7 @@
     "@types/node": "^22.5.5",
     "c8": "^10.1.2",
     "chai": "^5.1.1",
-    "esbuild": "^0.23.1",
+    "esbuild": "^0.24.0",
     "esbuild-register": "^3.6.0",
     "eslint": "^9.10.0",
     "mocha": "^10.7.3",
