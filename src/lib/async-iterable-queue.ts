@@ -49,11 +49,8 @@ class AIQAsyncIterator<T> implements AsyncIterator<T> {
  */
 enum AIQState {
   // NOTE: - False positive warnings
-  // eslint-disable-next-line no-unused-vars
   ending = 1,
-  // eslint-disable-next-line no-unused-vars
   finished = 2,
-  // eslint-disable-next-line no-unused-vars
   undefined = 0,
 }
 

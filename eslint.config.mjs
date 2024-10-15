@@ -3,6 +3,7 @@ import tslint from 'typescript-eslint'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
+  ...tslint.configs.recommended,
   {
     files: [
       'src/**/*.ts',
@@ -21,6 +22,18 @@ export default [
       tslint: tslint.plugin,
     },
     rules: {
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+          varsIgnorePattern: '^_',
+        },
+      ],
       complexity: [
         'error',
         4,
@@ -38,15 +51,7 @@ export default [
       ],
       'no-control-regex': 'off',
       'no-namespace': 'off',
-      'no-unused-vars': [
-        'warn',
-        {
-          'argsIgnorePattern': '^_',
-          'caughtErrorsIgnorePattern': '^_',
-          'destructuredArrayIgnorePattern': '^_',
-          'varsIgnorePattern': '^_',
-        },
-      ],
+      'no-unused-vars': 'off',
       quotes: [
         'error',
         'single',
