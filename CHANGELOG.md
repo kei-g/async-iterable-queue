@@ -8,16 +8,20 @@
   - Reduce triggers to run GitHub Actions
   - Use `kei-g/github/create-release` action to create a release on GitHub
   - Use the latest Node.js to publish
+- :bug: Import EventEmitter from not 'node:stream' but 'node:events'
+- :building_construction: Migrations
+  - Coverage framework is migrated from `nyc` to `c8`
+  - `@typescript-eslint/eslint-plugin` and `@typescript-eslint/parser` are migrated to `typescript-eslint`
 - :arrow_up: Packages for development are bumped
-  - `@types/chai` is bumped from 4.3.4 to 4.3.5
-  - `@types/node` is bumped from 18.11.18 to 20.5.8
-  - `@typescript-eslint/eslint-plugin` is bumped from 5.48.1 to 6.5.0
-  - `@typescript-eslint/parser` is bumped from 5.48.1 to 6.5.0
-  - `chai` is bumped from 4.3.7 to 4.3.8
-  - `esbuild` is bumped from 0.17.0 to 0.19.2
-  - `eslint` is bumped from 8.32.0 to 8.48.0
-  - `rimraf` is bumped from 4.0.7 to 5.0.1
-  - `typescript` is bumped from 4.9.4 to 5.2.2
+  - `@types/chai` is bumped from 4.3.4 to 5.0.1
+  - `@types/mocha` is bumped from 10.0.1 to 10.0.9
+  - `@types/node` is bumped from 18.11.18 to 22.8.7
+  - `chai` is bumped from 4.3.7 to 5.1.2
+  - `esbuild` is bumped from 0.17.0 to 0.24.0
+  - `eslint` is bumped from 8.32.0 to 9.14.0
+  - `mocha` is bumped from 10.2.0 to 10.8.2
+  - `rimraf` is bumped from 4.0.7 to 6.0.1
+  - `typescript` is bumped from 4.9.4 to 5.6.3
 
 ## Version 1.0.15
 
