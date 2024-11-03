@@ -1,5 +1,5 @@
-import { EventEmitter } from 'stream'
-import { assert } from 'console'
+import { EventEmitter } from 'node:events'
+import { assert } from 'node:console'
 
 /**
  * 非同期反復可能な先入れ先出し型の待ち行列への非同期反復子
