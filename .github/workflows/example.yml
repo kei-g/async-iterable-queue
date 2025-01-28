@@ -23,7 +23,8 @@ jobs:
         run: npm install npm@latest -g
       - name: Setup modules
         run: npm ci
-      - name: Run an example
+      - id: example
+        name: Run an example
         run: npm start
 name: Example
 on:
