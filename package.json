@@ -15,7 +15,7 @@
     "esbuild": "^0.25.4",
     "esbuild-register": "^3.6.0",
     "eslint": "^9.26.0",
-    "mocha": "^11.2.2",
+    "mocha": "^11.3.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
     "typescript": "^5.8.3",
