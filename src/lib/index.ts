@@ -1,1 +1,1 @@
-export * from './async-iterable-queue'
+export * from './async-iterable-queue.ts'

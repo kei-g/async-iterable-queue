@@ -1,3 +1,3 @@
 export const name = 'async-iterable-queue'
 
-export * from './lib'
+export * from './lib/index.ts'

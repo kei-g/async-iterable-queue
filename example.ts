@@ -1,5 +1,5 @@
 
-import { AsyncIterableQueue } from './src'
+import { AsyncIterableQueue } from './src/index.ts'
 
 type Foo = {
   id: number
