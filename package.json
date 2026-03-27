@@ -45,6 +45,7 @@
     "clean": "rimraf coverage/ index.d.ts index.js lib/",
     "cover": "c8 --check-coverage _mocha",
     "lint": "biome lint --write",
+    "postbuild:tsc": "tar -C types/src -cf - . | tar -xf - && rm -fr types",
     "postpublish": "run-s clean",
     "prebuild": "run-p clean lint",
     "prepublishOnly": "run-s build",

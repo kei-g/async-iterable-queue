@@ -10,10 +10,10 @@
   "files": {
     "includes": [
       "**",
+      "!*.d.ts",
       "!*.js",
       "!.vscode",
       "!coverage",
-      "!index.d.ts",
       "!lib",
       "!node_modules"
     ],

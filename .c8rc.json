@@ -3,6 +3,7 @@
   "branches": 100,
   "check-coverage": true,
   "exclude": [
+    "**/*.d.ts",
     "**/*.spec.ts",
     "**/index.ts"
   ],
