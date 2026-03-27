@@ -45,7 +45,7 @@
       },
       "correctness": {
         "noUnusedImports": "error",
-        "noUnusedPrivateClassMembers": "error",
+        "noUnusedPrivateClassMembers": "off",
         "noUnusedVariables": "error",
         "useImportExtensions": "error",
         "useParseIntRadix": "off"
