@@ -34,6 +34,11 @@
   "license": "BSD-3-Clause",
   "main": "index.js",
   "name": "async-iterable-queue",
+  "overrides": {
+    "c8": {
+      "yargs": "^18.0.0"
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
