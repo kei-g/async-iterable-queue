@@ -4,7 +4,6 @@
     "alwaysStrict": true,
     "declaration": true,
     "declarationDir": "./types",
-    "downlevelIteration": true,
     "emitBOM": false,
     "emitDeclarationOnly": true,
     "emitDecoratorMetadata": false,
@@ -13,8 +12,8 @@
     "lib": [
       "ES2015",
     ],
-    "module": "CommonJS",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "newLine": "lf",
     "pretty": false,
     "removeComments": true,
