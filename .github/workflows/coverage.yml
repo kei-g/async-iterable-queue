@@ -2,12 +2,6 @@ jobs:
   coverage:
     name: Check code coverages on Node.js ${{ matrix.node }}
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        node:
-          - 20
-          - 22
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -29,6 +23,13 @@ jobs:
         with:
           name: code-coverage-report-${{ github.event.repository.name }}-${{ matrix.node }}
           path: coverage
+    strategy:
+      fail-fast: false
+      matrix:
+        node:
+          - 22
+          - 24
+          - 26
 name: Coverage
 on:
   push:
