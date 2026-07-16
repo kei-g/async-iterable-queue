@@ -47,12 +47,7 @@ class AIQAsyncIterator<T> implements AsyncIterator<T> {
 /**
  * 非同期反復可能な先入れ先出し型の待ち行列の状態を表す型
  */
-enum AIQState {
-  // NOTE: - False positive warnings
-  ending = 1,
-  finished = 2,
-  undefined = 0,
-}
+type AIQState = 1 /* ending */ | 2 /* finished */ | 0 /* undefined */
 
 /**
  * 非同期反復可能な先入れ先出し型の待ち行列
@@ -82,15 +77,15 @@ export class AsyncIterableQueue<T> implements AsyncIterable<T> {
    * コンストラクタ
    */
   constructor() {
-    this.#state[0] = AIQState.undefined
+    this.#state[0] = 0
     const resolveAsync = createAsyncResolver(
       {
         finish: () =>
           Atomics.exchange(
             this.#state,
             0,
-            AIQState.finished,
-          ),
+            2,
+          ) as AIQState,
         resolvers: this.#resolvers,
       }
     )
@@ -128,12 +123,12 @@ export class AsyncIterableQueue<T> implements AsyncIterable<T> {
         const state = Atomics.compareExchange(
           this.#state,
           0,
-          AIQState.undefined,
-          AIQState.ending,
+          0,
+          1,
         )
-        if (state !== AIQState.undefined)
+        if (state !== 0)
           return reject(
-            new Error(AIQState[state])
+            new Error()
           )
         this.#emitter.emit(
           'enq',
@@ -158,9 +153,9 @@ export class AsyncIterableQueue<T> implements AsyncIterable<T> {
           this.#state,
           0,
         )
-        if (state !== AIQState.undefined)
+        if (state !== 0)
           return reject(
-            new Error(AIQState[state])
+            new Error()
           )
         this.#emitter.emit(
           'enq',
@@ -246,15 +241,11 @@ class Terminator {
         resolve: Resolver<void>,
         reject: SingleParameterAction<unknown>,
       ) => {
-        if (this.cb)
-          try {
-            const result = this.cb()
-            if (result instanceof Promise)
-              return result.catch(reject).then(resolve)
-          }
-          catch (err: unknown) {
-            return reject(err)
-          }
+        if (this.cb) {
+          const result = this.cb()
+          if (result instanceof Promise)
+            return result.catch(reject).then(resolve)
+        }
         return resolve()
       }
     )
@@ -297,7 +288,7 @@ const createAsyncResolver = <T>(
           done: true
         } as IteratorResult<T>
       )
-      assert(state === AIQState.ending)
+      assert(state === 1)
       await value.call()
     }
     else

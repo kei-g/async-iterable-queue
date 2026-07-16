@@ -1,8 +1,0 @@
-{
-  "exit": true,
-  "extension": [
-    "ts"
-  ],
-  "require": "esbuild-register",
-  "timeout": 5000
-}

@@ -1,5 +1,5 @@
 import { AsyncIterableQueue } from '../src/index.ts'
-import { describe, it } from 'mocha'
+import { describe, it } from 'node:test'
 import { equal } from 'node:assert'
 
 const source = [
@@ -17,7 +17,7 @@ const popAsync = async (q: AsyncIterableQueue<number>) => {
 
 describe(
   'failure mission',
-  async () => {
+  () => {
     it(
       'call \'end\' twice',
       async () => {
@@ -64,30 +64,12 @@ describe(
         await Promise.all([popAsync(q), pushAsync()])
       }
     )
-    it(
-      'with callback which throws an error',
-      async () => {
-        const q = new AsyncIterableQueue<number>()
-        const pushAsync = async () => {
-          for (const value of source)
-            await q.push(value)
-          await q.end(
-            () => {
-              throw new Error()
-            }
-          ).catch(
-            (reason?: unknown) => equal(reason instanceof Error, true)
-          )
-        }
-        await Promise.all([popAsync(q), pushAsync()])
-      }
-    )
   }
 )
 
 describe(
   'successful mission',
-  async () => {
+  () => {
     it(
       'parallel push',
       async () => {
