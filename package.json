@@ -46,7 +46,6 @@
     "clean": "rimraf coverage/ index.d.ts index.js lib/",
     "cover": "c8 node --test",
     "lint": "biome lint --write",
-    "postbuild:tsc": "tar -C types/src -cf - . | tar -xf - && rm -fr types",
     "postpublish": "npm run clean",
     "prebuild": "npm-run-all2 --parallel clean lint",
     "prepublishOnly": "npm run build",
