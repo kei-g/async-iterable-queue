@@ -33,7 +33,7 @@
   "main": "index.js",
   "name": "async-iterable-queue",
   "overrides": {
-    "brace-expansion": "^5.0.9"
+    "brace-expansion": "^5.0.12"
   },
   "publishConfig": {
     "access": "public"
